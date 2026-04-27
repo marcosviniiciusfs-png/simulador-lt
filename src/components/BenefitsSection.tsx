@@ -23,8 +23,8 @@ const BenefitsSection = () => {
     <section id="beneficios" className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Por que escolher a Viva Capital?
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Por que escolher a LT Representações?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Oferecemos as melhores condições do mercado com total transparência e agilidade.
@@ -38,8 +38,8 @@ const BenefitsSection = () => {
               className="bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 rounded-full bg-orange/10 flex items-center justify-center mb-6 mx-auto">
-                <benefit.icon className="w-8 h-8 text-orange" />
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto">
+                <benefit.icon className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3 text-center">
                 {benefit.title}

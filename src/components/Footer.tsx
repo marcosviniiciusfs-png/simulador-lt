@@ -1,5 +1,5 @@
 import { Phone, MapPin, Clock, Instagram } from "lucide-react";
-import vivaCapitalLogo from "@/assets/viva-capital-logo.png";
+import ltRepresentacoesLogo from "@/assets/lt-representacoes-logo.png";
 import facebookIcon from "@/assets/facebook.png";
 
 const Footer = () => {
@@ -10,24 +10,22 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div>
             <div className="flex flex-col items-center md:items-start gap-2 mb-4">
-              <img src={vivaCapitalLogo} alt="Viva Capital" className="h-20 w-auto" />
+              <img src={ltRepresentacoesLogo} alt="LT Representações" className="h-20 w-auto" />
             </div>
             <div className="flex items-center gap-4 mt-2">
               <a
-                href="https://www.facebook.com/profile.php?id=61579785880482#"
+                href="https://www.facebook.com/profile.php?id=61583666960353#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-foreground/70 transition-colors"
-                aria-label="Facebook da Viva Capital">
+                aria-label="Facebook da LT Representações">
                 
                 <img src={facebookIcon} alt="Facebook" className="w-8 h-8" />
               </a>
               <a
-                href="https://www.instagram.com/vivacapitalconsorcios?igsh=NWx0NHR3dHZsZG12"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="text-foreground hover:text-foreground/70 transition-colors"
-                aria-label="Instagram da Viva Capital">
+                aria-label="Instagram da LT Representações">
                 
                 <Instagram className="w-8 h-8" />
               </a>
@@ -42,7 +40,10 @@ const Footer = () => {
                 <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold">WhatsApp</p>
-                  <p className="text-muted-foreground">(85) 98972-6961</p>
+                  <p className="text-muted-foreground">
+                    (19) 99286-3840<br />
+                    (19) 97162-1610
+                  </p>
                 </div>
               </div>
             </div>
@@ -56,8 +57,9 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-muted-foreground">
-                    Rua Sátiro Dias, 387 – Montese<br />
-                    Fortaleza-CE
+                    Av. Francisco José de Camargo Andrade<br />
+                    N°195 - Jardim Chapadão<br />
+                    Campinas/SP, 13070-055
                   </p>
                 </div>
               </div>
@@ -78,7 +80,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2025 Viva Capital. Todos os direitos reservados.
+              © 2025 LT Representações. Todos os direitos reservados.
             </p>
             <div className="flex gap-6 text-sm">
               <button className="text-muted-foreground hover:text-white transition-colors">

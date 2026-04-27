@@ -206,7 +206,7 @@ const Simulator = () => {
       case 0:
         return (
           <div className="space-y-4">
-            <Label htmlFor="propertyType" className="text-lg font-semibold text-primary text-center block mb-6">
+            <Label htmlFor="propertyType" className="text-lg font-semibold text-foreground text-center block mb-6">
               Qual tipo de bem você deseja adquirir?
             </Label>
             <Select
@@ -230,7 +230,7 @@ const Simulator = () => {
       case 1:
         return (
           <div className="space-y-4">
-            <Label className="text-lg font-semibold text-primary text-center block mb-6">
+            <Label className="text-lg font-semibold text-foreground text-center block mb-6">
               Em até quanto tempo você deseja adquirir o seu bem?
             </Label>
             <Select
@@ -253,7 +253,7 @@ const Simulator = () => {
       case 2:
         return (
           <div className="space-y-4">
-            <Label htmlFor="creditAmount" className="text-lg font-semibold text-primary text-center block mb-6">
+            <Label htmlFor="creditAmount" className="text-lg font-semibold text-foreground text-center block mb-6">
               Qual o valor do crédito que deseja simular?
             </Label>
             <Input
@@ -269,7 +269,7 @@ const Simulator = () => {
       case 3:
         return (
           <div className="space-y-4">
-            <Label className="text-lg font-semibold text-primary text-center block mb-6">
+            <Label className="text-lg font-semibold text-foreground text-center block mb-6">
               Tem valor de entrada?
             </Label>
             <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
@@ -277,7 +277,7 @@ const Simulator = () => {
                 onClick={() => setFormData({ ...formData, hasDownPayment: "Sim" })}
                 className={`p-4 rounded-xl border-2 transition-all ${
                   formData.hasDownPayment === "Sim"
-                    ? "border-orange bg-orange/5 text-orange"
+                    ? "border-primary bg-primary/5 text-primary"
                     : "border-border hover:border-orange/50 text-muted-foreground"
                 }`}
               >
@@ -315,7 +315,7 @@ const Simulator = () => {
       case 4:
         return (
           <div className="space-y-4">
-            <Label htmlFor="monthlyPayment" className="text-lg font-semibold text-primary text-center block mb-6">
+            <Label htmlFor="monthlyPayment" className="text-lg font-semibold text-foreground text-center block mb-6">
               Qual a parcela mensal ideal pra você?
             </Label>
             <Input
@@ -331,7 +331,7 @@ const Simulator = () => {
       case 5:
         return (
           <div className="space-y-4">
-            <Label htmlFor="city" className="text-lg font-semibold text-primary text-center block mb-6">
+            <Label htmlFor="city" className="text-lg font-semibold text-foreground text-center block mb-6">
               Qual cidade você reside?
             </Label>
             <Input
@@ -347,7 +347,7 @@ const Simulator = () => {
       case 6:
         return (
           <div className="space-y-4">
-            <Label htmlFor="fullName" className="text-lg font-semibold text-primary text-center block mb-6">
+            <Label htmlFor="fullName" className="text-lg font-semibold text-foreground text-center block mb-6">
               Nome completo
             </Label>
             <Input
@@ -363,7 +363,7 @@ const Simulator = () => {
       case 7:
         return (
           <div className="space-y-4">
-            <Label htmlFor="whatsapp" className="text-lg font-semibold text-primary text-center block mb-6">
+            <Label htmlFor="whatsapp" className="text-lg font-semibold text-foreground text-center block mb-6">
               WhatsApp para contato
             </Label>
             <InputMask
@@ -394,7 +394,7 @@ const Simulator = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               Simulador de Crédito
             </h2>
             <p className="text-muted-foreground">
@@ -430,7 +430,7 @@ const Simulator = () => {
                 <Button
                   onClick={handleNext}
                   disabled={!canProceed()}
-                  className="flex items-center gap-2 bg-orange hover:bg-orange/90"
+                  className="flex items-center gap-2 bg-primary hover:bg-primary-hover"
                 >
                   Próximo
                   <ChevronRight className="w-4 h-4" />
@@ -439,7 +439,7 @@ const Simulator = () => {
                 <Button
                   onClick={handleFinish}
                   disabled={!canProceed() || isSubmitting}
-                  className="bg-orange hover:bg-orange/90"
+                  className="bg-primary hover:bg-primary-hover"
                 >
                   {isSubmitting ? "Enviando..." : "Finalizar Simulação"}
                 </Button>

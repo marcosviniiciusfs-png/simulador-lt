@@ -29,10 +29,10 @@ const ThankYou = () => {
       <div className="max-w-md w-full text-center space-y-6">
         <div className="flex justify-center">
           <div className="rounded-full bg-primary/10 p-6">
-            <CheckCircle className="w-16 h-16 text-primary" />
+            <CheckCircle className="w-16 h-16 text-[#FEFEFE]" />
           </div>
         </div>
-        
+
         <div className="space-y-3">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
             Obrigado!
@@ -52,13 +52,12 @@ const ThankYou = () => {
               href={proof.leadUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-primary hover:underline mt-1"
+              className="inline-flex items-center gap-1 text-[#FEFEFE] hover:underline mt-1"
             >
               Abrir no CRM <ExternalLink className="w-3 h-3" />
             </a>
           </div>
         )}
-
         <div className="pt-4">
           <Link to="/">
             <Button className="bg-primary hover:bg-primary-hover">

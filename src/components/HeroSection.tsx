@@ -15,11 +15,11 @@ const HeroSection = ({ onSimulateClick }: HeroSectionProps) => {
   ];
 
   return (
-    <section id="inicio" className="pt-24 pb-16 bg-primary/10">
+    <section id="inicio" className="pt-24 pb-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Simule agora o seu crédito ideal para conquistar o seu sonho
             </h1>
             
@@ -38,7 +38,7 @@ const HeroSection = ({ onSimulateClick }: HeroSectionProps) => {
               ))}
             </div>
 
-            <Button 
+            <Button
               onClick={onSimulateClick}
               size="lg"
               className="bg-primary hover:bg-primary-hover text-primary-foreground font-semibold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all"

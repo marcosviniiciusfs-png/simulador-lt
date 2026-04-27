@@ -26,25 +26,25 @@ const Header = () => {
         <nav className="hidden md:flex items-center gap-6">
           <button
             onClick={() => scrollToSection("inicio")}
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-foreground hover:text-foreground/70 transition-colors"
           >
             Início
           </button>
           <button
             onClick={() => scrollToSection("simulador")}
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-foreground hover:text-foreground/70 transition-colors"
           >
             Simulador
           </button>
           <button
             onClick={() => scrollToSection("beneficios")}
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-foreground hover:text-foreground/70 transition-colors"
           >
             Benefícios
           </button>
           <button
             onClick={() => scrollToSection("contato")}
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-foreground hover:text-foreground/70 transition-colors"
           >
             Contato
           </button>
@@ -54,7 +54,7 @@ const Header = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden text-white hover:bg-white/10"
+          className="md:hidden text-foreground hover:bg-foreground/10"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -67,25 +67,25 @@ const Header = () => {
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <button
               onClick={() => scrollToSection("inicio")}
-              className="text-white hover:text-white/80 transition-colors text-left py-2"
+              className="text-foreground hover:text-foreground/70 transition-colors text-left py-2"
             >
               Início
             </button>
             <button
               onClick={() => scrollToSection("simulador")}
-              className="text-white hover:text-white/80 transition-colors text-left py-2"
+              className="text-foreground hover:text-foreground/70 transition-colors text-left py-2"
             >
               Simulador
             </button>
             <button
               onClick={() => scrollToSection("beneficios")}
-              className="text-white hover:text-white/80 transition-colors text-left py-2"
+              className="text-foreground hover:text-foreground/70 transition-colors text-left py-2"
             >
               Benefícios
             </button>
             <button
               onClick={() => scrollToSection("contato")}
-              className="text-white hover:text-white/80 transition-colors text-left py-2"
+              className="text-foreground hover:text-foreground/70 transition-colors text-left py-2"
             >
               Contato
             </button>

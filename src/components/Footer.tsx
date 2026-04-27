@@ -4,7 +4,7 @@ import facebookIcon from "@/assets/facebook.png";
 
 const Footer = () => {
   return (
-    <footer id="contato" className="bg-[hsl(var(--header-footer))] text-white">
+    <footer id="contato" className="bg-[hsl(var(--header-footer))] text-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo e Descrição */}
@@ -17,7 +17,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61579785880482#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-white/80 transition-colors"
+                className="text-foreground hover:text-foreground/70 transition-colors"
                 aria-label="Facebook da Viva Capital">
                 
                 <img src={facebookIcon} alt="Facebook" className="w-8 h-8" />
@@ -26,7 +26,7 @@ const Footer = () => {
                 href="https://www.instagram.com/vivacapitalconsorcios?igsh=NWx0NHR3dHZsZG12"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-white/80 transition-colors"
+                className="text-foreground hover:text-foreground/70 transition-colors"
                 aria-label="Instagram da Viva Capital">
                 
                 <Instagram className="w-8 h-8" />
@@ -42,7 +42,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold">WhatsApp</p>
-                  <p className="text-white/90">(85) 98972-6961</p>
+                  <p className="text-muted-foreground">(85) 98972-6961</p>
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white/90">
+                  <p className="text-muted-foreground">
                     Rua Sátiro Dias, 387 – Montese<br />
                     Fortaleza-CE
                   </p>
@@ -65,7 +65,7 @@ const Footer = () => {
                 <Clock className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold">Horário de Atendimento</p>
-                  <p className="text-white/90">
+                  <p className="text-muted-foreground">
                     Segunda à Sexta: 8h às 18h<br />
                     Sábado: 8h às 12h
                   </p>
@@ -75,16 +75,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-8">
+        <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/90 text-sm">
+            <p className="text-muted-foreground text-sm">
               © 2025 Viva Capital. Todos os direitos reservados.
             </p>
             <div className="flex gap-6 text-sm">
-              <button className="text-white/90 hover:text-white transition-colors">
+              <button className="text-muted-foreground hover:text-white transition-colors">
                 Política de Privacidade
               </button>
-              <button className="text-white/90 hover:text-white transition-colors">
+              <button className="text-muted-foreground hover:text-white transition-colors">
                 Termos de Uso
               </button>
             </div>

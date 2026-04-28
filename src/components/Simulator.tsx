@@ -266,10 +266,10 @@ const Simulator = () => {
                 <SelectValue placeholder="Selecione uma opção" />
               </SelectTrigger>
               <SelectContent className="bg-card">
-                <SelectItem value="1 a 2 meses">1 a 2 meses</SelectItem>
-                <SelectItem value="3 a 4 meses">3 a 4 meses</SelectItem>
-                <SelectItem value="5 a 6 meses">5 a 6 meses</SelectItem>
-                <SelectItem value="Acima de 6 meses">Acima de 6 meses</SelectItem>
+                <SelectItem value="3 a 6 meses">3 a 6 meses</SelectItem>
+                <SelectItem value="6 a 9 meses">6 a 9 meses</SelectItem>
+                <SelectItem value="9 a 12 meses">9 a 12 meses</SelectItem>
+                <SelectItem value="Acima de 1 ano">Acima de 1 ano</SelectItem>
               </SelectContent>
             </Select>
           </div>

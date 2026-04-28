@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { sendLeadToWebhook, LeadValidationError } from "@/lib/leadWebhook";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -126,11 +127,23 @@ const Simulator = () => {
       city: formData.city.trim(),
     };
 
+    const leadInput = {
+      fullName: formData.fullName,
+      whatsapp: formData.whatsapp,
+      city: formData.city,
+      propertyType: formData.propertyType,
+      acquisitionTime: formData.acquisitionTime,
+      creditAmount: formData.creditAmount,
+      hasDownPayment: formData.hasDownPayment,
+      downPaymentAmount: formData.downPaymentAmount,
+      monthlyPayment: formData.monthlyPayment,
+    };
+
     try {
       console.log("Enviando dados para webhook e Kommo:", webhookData);
-      
-      // Send to Make and Kommo in parallel
-      const [makeResult, kommoResult] = await Promise.allSettled([
+
+      // Send to Make, Kommo, and external lead webhook in parallel
+      const [makeResult, kommoResult, leadWebhookResult] = await Promise.allSettled([
         fetch(webhookUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -139,7 +152,19 @@ const Simulator = () => {
         supabase.functions.invoke('send-to-kommo', {
           body: kommoData,
         }),
+        sendLeadToWebhook(leadInput),
       ]);
+
+      if (leadWebhookResult.status === 'fulfilled') {
+        console.log("Lead webhook OK:", leadWebhookResult.value);
+      } else {
+        const reason = leadWebhookResult.reason;
+        if (reason instanceof LeadValidationError) {
+          console.error("Lead webhook validação falhou:", reason.missingFields);
+        } else {
+          console.error("Lead webhook falhou:", reason);
+        }
+      }
 
       // Process Kommo result and store proof
       let kommoSuccess = false;

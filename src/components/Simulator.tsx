@@ -155,7 +155,8 @@ const Simulator = () => {
         sendLeadToWebhook(leadInput),
       ]);
 
-      if (leadWebhookResult.status === 'fulfilled') {
+      const leadWebhookOk = leadWebhookResult.status === 'fulfilled';
+      if (leadWebhookOk) {
         console.log("Lead webhook OK:", leadWebhookResult.value);
       } else {
         const reason = leadWebhookResult.reason;
@@ -164,6 +165,14 @@ const Simulator = () => {
         } else {
           console.error("Lead webhook falhou:", reason);
         }
+      }
+
+      const makeOk = makeResult.status === 'fulfilled' && makeResult.value.ok;
+      if (!makeOk) {
+        console.error(
+          "Make webhook falhou:",
+          makeResult.status === 'fulfilled' ? makeResult.value.status : makeResult.reason
+        );
       }
 
       // Process Kommo result and store proof
@@ -187,8 +196,8 @@ const Simulator = () => {
         console.error("Erro ao enviar para Kommo:", kommoResult.reason);
       }
 
-      // Check if Make was successful
-      if (makeResult.status === 'fulfilled' && makeResult.value.ok) {
+      // Sucesso enquanto pelo menos um destino aceitar o lead
+      if (leadWebhookOk || makeOk) {
         setFormData({
           propertyType: "",
           acquisitionTime: "",
@@ -203,7 +212,7 @@ const Simulator = () => {
         setCurrentStep(0);
         navigate("/obrigado");
       } else {
-        throw new Error("Erro ao enviar dados para Make");
+        throw new Error("Falha em todos os destinos de webhook");
       }
     } catch (error) {
       console.error("Erro ao enviar:", error);

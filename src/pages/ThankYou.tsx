@@ -10,6 +10,12 @@ interface KommoProof {
   verified: boolean;
 }
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 const ThankYou = () => {
   const [proof, setProof] = useState<KommoProof | null>(null);
   const [searchParams] = useSearchParams();
@@ -22,6 +28,10 @@ const ThankYou = () => {
         setProof(JSON.parse(stored));
       }
     } catch { /* ignore */ }
+
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "Lead");
+    }
   }, []);
 
   return (
